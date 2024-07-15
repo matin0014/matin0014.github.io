@@ -14,10 +14,6 @@ export default function Hero() {
       id="hero"
       sx={(theme) => ({
         width: '100%',
-        backgroundImage:
-          theme.palette.mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
         backgroundSize: '100% 20%',
         backgroundRepeat: 'no-repeat',
       })}
@@ -40,59 +36,28 @@ export default function Hero() {
               alignSelf: 'left',
               textAlign: 'left',
               fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+              fontWeight: "bold",
             }}
           >
-            Our latest&nbsp;
+            Hi, I'm&nbsp;
             <Typography
               component="span"
               variant="h1"
               sx={{
                 fontSize: 'clamp(3rem, 10vw, 4rem)',
-                color: (theme) =>
-                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                color: "hotpink",
+                fontWeight: "bold",
               }}
             >
-              products
+              Matin
             </Typography>
           </Typography>
           <Typography
             textAlign="left"
-            color="text.secondary"
-            sx={{ alignSelf: 'left', width: { sm: '100%', md: '80%' } }}
+            color="hotpink"
+            sx={{ alignSelf: 'left', width: { sm: '100%', md: '75%' } }}
           >
-            Explore our cutting-edge dashboard, delivering high-quality solutions
-            tailored to your needs. Elevate your experience with top-tier features
-            and services.
-          </Typography>
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            alignSelf="left"
-            spacing={1}
-            useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
-          >
-            <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              inputProps={{
-                autoComplete: 'off',
-                'aria-label': 'Enter your email address',
-              }}
-            />
-            <Button variant="contained" color="primary">
-              Start now
-            </Button>
-          </Stack>
-          <Typography variant="caption" textAlign="left" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
-            <Link href="#" color="primary">
-              Terms & Conditions
-            </Link>
-            .
+            I am a third year Computer Science student at the University of British Columbia working towards a career in software development.
           </Typography>
         </Stack>
        

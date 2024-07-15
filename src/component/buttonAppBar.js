@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function ButtonAppBar() {
   return (
@@ -21,10 +23,25 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          
+          <Box sx={{ marginLeft: 'auto' }}>
+            <IconButton
+              size="large"
+              color="inherit"
+              aria-label="github"
+              sx={{ mr: 2 }}
+              href="https://github.com/your-github-username" // Replace with your GitHub profile URL
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              size="large"
+              color="inherit"
+              aria-label="linkedin"
+              href="https://www.linkedin.com/in/your-linkedin-username" // Replace with your LinkedIn profile URL
+            >
+              <LinkedInIcon />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
