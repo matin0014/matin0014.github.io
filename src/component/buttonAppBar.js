@@ -2,8 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -28,8 +26,8 @@ export default function ButtonAppBar() {
               size="large"
               color="inherit"
               aria-label="github"
-              sx={{ mr: 2 }}
-              href="https://github.com/your-github-username" // Replace with your GitHub profile URL
+              sx={{ mr: -2 }}
+              href="https://github.com/your-github-username" 
             >
               <GitHubIcon />
             </IconButton>
@@ -37,7 +35,7 @@ export default function ButtonAppBar() {
               size="large"
               color="inherit"
               aria-label="linkedin"
-              href="https://www.linkedin.com/in/your-linkedin-username" // Replace with your LinkedIn profile URL
+              href="https://www.linkedin.com/in/your-linkedin-username" 
             >
               <LinkedInIcon />
             </IconButton>

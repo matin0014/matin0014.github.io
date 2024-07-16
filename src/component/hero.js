@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
+
 import Typography from '@mui/material/Typography';
 
 export default function Hero() {
@@ -14,7 +12,11 @@ export default function Hero() {
       id="hero"
       sx={(theme) => ({
         width: '100%',
-        backgroundSize: '100% 20%',
+        backgroundImage:
+        theme.palette.mode === 'light'
+        ? 'linear-gradient(180deg, #FF69B4, #000000)'
+        : `linear-gradient(#02294F, ${alpha('#000000', 0.0)})`,
+        backgroundSize: '100% 45%',
         backgroundRepeat: 'no-repeat',
       })}
     >
@@ -37,6 +39,7 @@ export default function Hero() {
               textAlign: 'left',
               fontSize: 'clamp(3.5rem, 10vw, 4rem)',
               fontWeight: "bold",
+              color: "white"
             }}
           >
             Hi, I'm&nbsp;
@@ -54,7 +57,7 @@ export default function Hero() {
           </Typography>
           <Typography
             textAlign="left"
-            color="hotpink"
+            color="white"
             sx={{ alignSelf: 'left', width: { sm: '100%', md: '75%' } }}
           >
             I am a third year Computer Science student at the University of British Columbia working towards a career in software development.
