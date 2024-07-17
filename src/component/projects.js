@@ -1,57 +1,96 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import image from './images/9804423.jpg';
+
 const cardData = [
   {
-    title: 'Lizard 1',
-    image: '/static/images/cards/contemplative-reptile.jpg',
-    description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+    image: image,
+    status: 'In progress',
   },
   {
-    title: 'Lizard 2',
-    image: '/static/images/cards/contemplative-reptile.jpg',
-    description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+    image: image,
+    status: 'In progress',
   },
   {
-    title: 'Lizard 3',
-    image: '/static/images/cards/contemplative-reptile.jpg',
-    description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+    image: image,
+    status: 'In progress',
   },
   {
-    title: 'Lizard 4',
-    image: '/static/images/cards/contemplative-reptile.jpg',
-    description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+    image: image,
+    status: 'In progress',
   }
 ];
 
 const ActionAreaCard = () => {
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const isMediumScreen = useMediaQuery('(max-width:960px)');
+
+  let cardWidth;
+  if (isSmallScreen) {
+    cardWidth = '100%';
+  } else if (isMediumScreen) {
+    cardWidth = '45%';
+  } else {
+    cardWidth = '22%';
+  }
+
   return (
     <div style={{
       display: 'flex',
-      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center',
       margin: '0 auto',
-      maxWidth: '1200px', /* Adjust max width as needed */
-      padding: '0 20px', /* Adjust padding for margin on left and right */
+      maxWidth: '1200px',
+      padding: '0 20px',
       boxSizing: 'border-box',
+      marginTop: '300px', // Adjust top margin as needed
     }}>
-      <div style={{ display: 'flex', flexWrap: 'wrap', maxWidth: '1200px', width: '100%' }}>
+      <Typography
+        variant="h1"
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          alignSelf: 'flex-start',
+          textAlign: 'left',
+          fontSize: 'clamp(2.5rem, 9vw, 3rem)',
+          fontWeight: 'bold',
+          color: 'white',
+          marginBottom: '20px'
+        }}
+      >
+        My&nbsp;
+        <Typography
+          component="span"
+          variant="h1"
+          sx={{
+            fontSize: 'clamp(2rem, 9vw, 3rem)',
+            color: 'hotpink',
+            fontWeight: 'bold',
+          }}
+        >
+          Projects
+        </Typography>
+      </Typography>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%' }}>
         {cardData.map((card, index) => (
-          <Card key={index} sx={{ width: 200, margin: '10px', height: 150 }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="140"
-                image= {image}
-              />
-              <CardContent>
-                
-              </CardContent>
-            </CardActionArea>
-          </Card>
+          <div key={index} style={{ width: cardWidth, margin: '10px 0', textAlign: 'center' }}>
+            <Typography variant="body1" component="p" sx={{ color: 'white', marginBottom: '10px' }}>
+              {card.status}
+            </Typography>
+            <Card sx={{ height: 'auto' }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={card.image}
+                />
+              </CardActionArea>
+            </Card>
+          </div>
         ))}
       </div>
     </div>

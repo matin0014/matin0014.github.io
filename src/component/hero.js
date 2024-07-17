@@ -37,7 +37,7 @@ export default function Hero() {
               flexDirection: { xs: 'column', md: 'row' },
               alignSelf: 'left',
               textAlign: 'left',
-              fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+              fontSize: 'clamp(2.5rem, 9vw, 3rem)',
               fontWeight: "bold",
               color: "white"
             }}
@@ -47,7 +47,7 @@ export default function Hero() {
               component="span"
               variant="h1"
               sx={{
-                fontSize: 'clamp(3rem, 10vw, 4rem)',
+                fontSize: 'clamp(2rem, 9vw, 3rem)',
                 color: "hotpink",
                 fontWeight: "bold",
               }}
