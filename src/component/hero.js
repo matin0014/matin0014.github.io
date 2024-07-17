@@ -24,7 +24,7 @@ export default function Hero() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'left',
+          alignItems: 'center',
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
         }}
@@ -35,8 +35,8 @@ export default function Hero() {
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
-              alignSelf: 'left',
-              textAlign: 'left',
+              alignSelf: 'center',
+              textAlign: 'center',
               fontSize: 'clamp(2.5rem, 9vw, 3rem)',
               fontWeight: "bold",
               color: "white"
@@ -56,9 +56,9 @@ export default function Hero() {
             </Typography>
           </Typography>
           <Typography
-            textAlign="left"
+            textAlign="center"
             color="white"
-            sx={{ alignSelf: 'left', width: { sm: '100%', md: '75%' } }}
+            sx={{ alignSelf: 'center', width: { sm: '100%', md: '75%' } }}
           >
             I am a third year Computer Science student at the University of British Columbia working towards a career in software development.
           </Typography>

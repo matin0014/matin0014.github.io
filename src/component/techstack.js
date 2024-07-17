@@ -4,22 +4,46 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
+import {
+  FaWindows,
+  FaJava,
+  FaPython,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaReact,
+  FaDocker,
+  FaGitAlt,
+  FaGoogle
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiMysql,
+  SiVisualstudiocode,
+  SiEclipseide,
+  SiFigma,
+  SiPostman,
+  SiNextdotjs,
+  SiExpress
+} from "react-icons/si";
 
 const TechStack = () => {
   const techStack = [
-    'React',
-    'Figma',
-    'JavaScript',
-    'HTML',
-    'CSS',
-    'Node.js',
-    'Postman',
-    'Java',
-    'MySQL',
-    'Git',
-    'GitHub',
-    'VS Code',
-    'Eclipse'
+    { name: 'React', icon: <FaReact /> },
+    { name: 'Figma', icon: <SiFigma /> },
+    { name: 'JavaScript', icon: <FaJs /> },
+    { name: 'HTML', icon: <FaHtml5 /> },
+    { name: 'CSS', icon: <FaCss3Alt /> },
+    { name: 'Node.js', icon: <FaNodeJs /> },
+    { name: 'Postman', icon: <SiPostman /> },
+    { name: 'Java', icon: <FaJava /> },
+    { name: 'MySQL', icon: <SiMysql /> },
+    { name: 'Git', icon: <FaGitAlt /> },
+    { name: 'GitHub', icon: <FaGitAlt /> },  // Using the same icon as Git for GitHub
+    { name: 'VS Code', icon: <SiVisualstudiocode /> },
+    { name: 'Eclipse', icon: <SiEclipseide /> }
   ];
 
   return (
@@ -55,17 +79,21 @@ const TechStack = () => {
           {techStack.map((tech, index) => (
             <Chip
               key={index}
-              label={tech}
+              label={tech.name}
+              icon={tech.icon}
               color="primary"
               variant="outlined"
               sx={{
                 m: 1,
                 borderColor: 'white',
                 color: 'white',
+                transition: 'all 0.3s ease',
                 '&:hover': {
                   backgroundColor: 'transparent',
                   color: 'hotpink',
                   borderColor: 'hotpink',
+                  transform: 'scale(1.1)',  // Increase size on hover
+                  boxShadow: '0 0 20px rgba(255, 105, 180, 0.5)'  // Optional: add a shadow effect
                 },
               }}
             />
