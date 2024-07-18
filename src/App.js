@@ -3,7 +3,8 @@ import './App.css';
 import ButtonAppBar from './component/buttonAppBar';
 import Hero from "./component/hero"
 import Projects from "./component/projects";
-import Techstack from "./component/techstack"
+import Techstack from "./component/techstack";
+import Contactme from "./component/contactme";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <Techstack />
         <Projects />
+        <Contactme />
         
         
     </div>
