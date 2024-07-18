@@ -4,6 +4,8 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
+import Grid from '@mui/material/Grid';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import {
   FaWindows,
   FaJava,
@@ -16,6 +18,7 @@ import {
   FaDocker,
   FaGitAlt,
   FaGoogle
+  
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -40,8 +43,8 @@ const TechStack = () => {
     { name: 'Postman', icon: <SiPostman /> },
     { name: 'Java', icon: <FaJava /> },
     { name: 'MySQL', icon: <SiMysql /> },
-    { name: 'Git', icon: <FaGitAlt /> },
-    { name: 'GitHub', icon: <FaGitAlt /> },  // Using the same icon as Git for GitHub
+    { name: 'Git', icon: <FaGitAlt /> }, 
+    { name: 'GitHub', icon: <GitHubIcon /> },  
     { name: 'VS Code', icon: <SiVisualstudiocode /> },
     { name: 'Eclipse', icon: <SiEclipseide /> }
   ];
@@ -75,30 +78,33 @@ const TechStack = () => {
             Stack
           </Typography>
         </Typography>
-        <Stack spacing={2} direction="row" justifyContent="left" alignItems="left" sx={{ flexWrap: 'wrap' }}>
-          {techStack.map((tech, index) => (
-            <Chip
-              key={index}
-              label={tech.name}
-              icon={tech.icon}
-              color="primary"
-              variant="outlined"
-              sx={{
-                m: 1,
-                borderColor: 'white',
-                color: 'white',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  backgroundColor: 'transparent',
-                  color: 'hotpink',
-                  borderColor: 'hotpink',
-                  transform: 'scale(1.1)',  // Increase size on hover
-                  boxShadow: '0 0 20px rgba(255, 105, 180, 0.5)'  // Optional: add a shadow effect
-                },
-              }}
-            />
-          ))}
-        </Stack>
+        <Grid container spacing={1} direction="row" justifyContent="left" alignItems="left" wrap="wrap">
+  {techStack.map((tech, index) => (
+    <Grid item key={index}>
+      <Chip
+        label={tech.name}
+        icon={tech.icon}
+        color="primary"
+        variant="outlined"
+        sx={{
+          m: 1,
+          borderColor: 'white',
+          color: 'white',
+          fontSize: '1.1rem',  // Increase font size
+          padding: '5px 5px',  // Increase padding
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            backgroundColor: 'transparent',
+            color: 'hotpink',
+            borderColor: 'hotpink',
+            transform: 'scale(1.1)',  // Increase size on hover
+            boxShadow: '0 0 20px rgba(255, 105, 180, 0.5)'  // Optional: add a shadow effect
+          },
+        }}
+      />
+    </Grid>
+  ))}
+</Grid>
       </Container>
     </Box>
   );
