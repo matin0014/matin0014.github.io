@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import image from './images/9804423.jpg';
+import image from './images/Untitled.jpg';
 
 const cardData = [
   {

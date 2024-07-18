@@ -75,7 +75,7 @@ const TechStack = () => {
             Stack
           </Typography>
         </Typography>
-        <Stack spacing={2} direction="row" justifyContent="center" alignItems="center" sx={{ flexWrap: 'wrap' }}>
+        <Stack spacing={2} direction="row" justifyContent="left" alignItems="left" sx={{ flexWrap: 'wrap' }}>
           {techStack.map((tech, index) => (
             <Chip
               key={index}
