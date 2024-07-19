@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'; 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useForm, ValidationError } from '@formspree/react';
 
 const theme = createTheme({
   components: {
@@ -59,7 +60,7 @@ const theme = createTheme({
 });
 
 export default function FormPropsTextFields() {
-  const [placeholder, setPlaceholder] = React.useState('Enter your email');
+  const [state, handleSubmit] = useForm("xkgwgdrn"); 
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,7 +83,7 @@ export default function FormPropsTextFields() {
             padding: '0 20px', 
           }}
         >
-          <Stack spacing={2} sx={{ width: '100%' }}>
+          <Stack spacing={3} sx={{ width: '100%' }}>
             <Typography
               variant="h1"
               sx={{
@@ -94,6 +95,7 @@ export default function FormPropsTextFields() {
                 fontWeight: 'bold',
                 color: 'white',
                 mb: 2, 
+                width: '100%', 
               }}
             >
               Contact&nbsp;
@@ -109,44 +111,79 @@ export default function FormPropsTextFields() {
                 Me
               </Typography>
             </Typography>
-            <Stack spacing={2} direction="row" sx={{ width: '100%' }}>
-              <TextField
-                required
-                id="first-name"
-                label="First Name"
-                variant="filled"
-                sx={{ flex: 1, maxWidth: 'calc(50%)' }}
-              />
-              <TextField
-                required
-                id="last-name"
-                label="Last Name"
-                variant="filled"
-                sx={{ flex: 1, maxWidth: 'calc(50%)' }} 
-              />
-            </Stack>
-            <TextField
-              required
-              id="email"
-              label="Enter your email"
-              variant="filled"
-              sx={{ width: '100%' }} 
-            />
-            <TextField
-              id="message"
-              label="Enter your message"
-              variant="filled"
-              multiline
-              rows={6}
-              sx={{ width: '100%' }} // Make the message field take full width
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ width: '100%' }} // Match the width of other fields
-            >
-              Submit
-            </Button>
+            {state.succeeded ? (
+              <Typography
+                variant="h6"
+                color="white"
+                sx={{
+                  width: '100%', 
+                  textAlign: 'left', 
+                  mb: 2, 
+                }}
+              >
+                Your message has been sent!
+              </Typography>
+            ) : (
+              <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+                <Stack spacing={2} direction="row" sx={{ width: '100%' }}>
+                  <TextField
+                    required
+                    id="first-name"
+                    name="firstName"
+                    label="First Name"
+                    variant="filled"
+                    sx={{ flex: 1, maxWidth: 'calc(50%)' }}
+                  />
+                  <TextField
+                    required
+                    id="last-name"
+                    name="lastName"
+                    label="Last Name"
+                    variant="filled"
+                    sx={{ flex: 1, maxWidth: 'calc(50%)' }} 
+                  />
+                </Stack>
+                <Stack spacing={2} sx={{ width: '100%', mt: 2 }}>
+                  <TextField
+                    required
+                    id="email"
+                    name="email"
+                    label="Enter your email"
+                    variant="filled"
+                    sx={{ width: '100%' }} 
+                  />
+                  <TextField
+                    id="message"
+                    name="message"
+                    label="Enter your message"
+                    variant="filled"
+                    multiline
+                    rows={6}
+                    sx={{ width: '100%' }} 
+                  />
+                </Stack>
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
+                {!state.succeeded && (
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{ width: '100%', mt: 2 }} // Add margin top for spacing
+                    disabled={state.submitting} // Disable button while submitting
+                  >
+                    Submit
+                  </Button>
+                )}
+              </form>
+            )}
           </Stack>
         </Container>
       </Box>
