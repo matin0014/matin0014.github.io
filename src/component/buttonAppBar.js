@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
                 },
                 transition: 'all 0.3s ease'
               }}
-              href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+              href="https://www.linkedin.com/in/matin-raoufi-9b519b294"
             >
               <LinkedInIcon sx={{ fontSize: '2rem' }} />
             </IconButton>
