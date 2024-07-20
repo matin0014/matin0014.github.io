@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
               color="inherit"
               aria-label="github"
               sx={{
-                mr: -1, // Adjusted from mr: 1
+                mr: -1, 
                 '&:hover': {
                   color: 'hotpink',
                   transform: 'scale(1.1)',
@@ -43,7 +43,7 @@ export default function ButtonAppBar() {
                 },
                 transition: 'all 0.3s ease'
               }}
-              href="https://github.com/your-github-username"
+              href="https://github.com/matin0014"
             >
               <GitHubIcon sx={{ fontSize: '2rem' }} />
             </IconButton>
@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
                 },
                 transition: 'all 0.3s ease'
               }}
-              href="https://www.linkedin.com/in/your-linkedin-username"
+              href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             >
               <LinkedInIcon sx={{ fontSize: '2rem' }} />
             </IconButton>
