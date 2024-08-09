@@ -17,8 +17,7 @@ import {
   FaReact,
   FaDocker,
   FaGitAlt,
-  FaGoogle
-  
+  FaGoogle,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -29,7 +28,7 @@ import {
   SiFigma,
   SiPostman,
   SiNextdotjs,
-  SiExpress
+  SiExpress,
 } from "react-icons/si";
 
 const TechStack = () => {
@@ -43,6 +42,8 @@ const TechStack = () => {
     { name: 'Postman', icon: <SiPostman /> },
     { name: 'Java', icon: <FaJava /> },
     { name: 'MySQL', icon: <SiMysql /> },
+    { name: 'MongoDB', icon: <SiMongodb /> },  // Added MongoDB
+    { name: 'Next.js', icon: <SiNextdotjs /> },  // Added Next.js
     { name: 'Git', icon: <FaGitAlt /> }, 
     { name: 'GitHub', icon: <GitHubIcon /> },  
     { name: 'VS Code', icon: <SiVisualstudiocode /> },
