@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.955213b1.css",
-    "main.js": "/static/js/main.53ce96a2.js",
+    "main.js": "/static/js/main.6223afe5.js",
     "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
+    "static/media/Llama3-1.jpg": "/static/media/Llama3-1.ddf856cf7ed3473b3ebe.jpg",
     "static/media/Untitled.jpg": "/static/media/Untitled.fcd192ad51641352d2ae.jpg",
+    "static/media/PaperTrade.jpg": "/static/media/PaperTrade.7104681283fae3b015eb.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.955213b1.css.map": "/static/css/main.955213b1.css.map",
-    "main.53ce96a2.js.map": "/static/js/main.53ce96a2.js.map",
+    "main.6223afe5.js.map": "/static/js/main.6223afe5.js.map",
     "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.955213b1.css",
-    "static/js/main.53ce96a2.js"
+    "static/js/main.6223afe5.js"
   ]
 }
