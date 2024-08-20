@@ -2,68 +2,40 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import {
-  FaWindows,
-  FaJava,
-  FaPython,
-  FaJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaReact,
-  FaDocker,
-  FaGitAlt,
-  FaGoogle,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiMongodb,
-  SiMysql,
-  SiVisualstudiocode,
-  SiEclipseide,
-  SiFigma,
-  SiPostman,
-  SiNextdotjs,
-  SiExpress,
-} from "react-icons/si";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaJava } from "react-icons/fa";
+import { SiFigma, SiMysql, SiMongodb, SiNextdotjs, SiPostman } from "react-icons/si";
+
+const techStack = [
+  { name: 'React', icon: <FaReact /> },
+  { name: 'JavaScript', icon: <FaJs /> },
+  { name: 'HTML', icon: <FaHtml5 /> },
+  { name: 'CSS', icon: <FaCss3Alt />},
+  { name: 'Node.js', icon: <FaNodeJs />},
+  { name: 'MongoDB', icon: <SiMongodb />},
+  { name: 'MySQL', icon: <SiMysql /> },
+  { name: 'Next.js', icon: <SiNextdotjs />},
+  { name: 'Postman', icon: <SiPostman />},
+  { name: 'Git', icon: <FaGitAlt />},
+  { name: 'Figma', icon: <SiFigma />},
+  { name: 'Java', icon: <FaJava />}
+];
 
 const TechStack = () => {
-  const techStack = [
-    { name: 'React', icon: <FaReact /> },
-    { name: 'Figma', icon: <SiFigma /> },
-    { name: 'JavaScript', icon: <FaJs /> },
-    { name: 'HTML', icon: <FaHtml5 /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'Postman', icon: <SiPostman /> },
-    { name: 'Java', icon: <FaJava /> },
-    { name: 'MySQL', icon: <SiMysql /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },  // Added MongoDB
-    { name: 'Next.js', icon: <SiNextdotjs /> },  // Added Next.js
-    { name: 'Git', icon: <FaGitAlt /> }, 
-    { name: 'GitHub', icon: <GitHubIcon /> },  
-    { name: 'VS Code', icon: <SiVisualstudiocode /> },
-    { name: 'Eclipse', icon: <SiEclipseide /> }
-  ];
-
   return (
     <Box id="tech-stack" sx={{ backgroundColor: '#000000', py: 4 }}>
       <Container>
         <Typography
           variant="h1"
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            alignSelf: 'flex-start',
             textAlign: 'left',
             fontSize: 'clamp(2.5rem, 9vw, 3rem)',
             fontWeight: 'bold',
             color: 'white',
-            marginBottom: '20px'
+            marginBottom: '20px',
           }}
         >
           Tech&nbsp;
@@ -79,33 +51,43 @@ const TechStack = () => {
             Stack
           </Typography>
         </Typography>
-        <Grid container spacing={1} direction="row" justifyContent="left" alignItems="left" wrap="wrap">
-  {techStack.map((tech, index) => (
-    <Grid item key={index}>
-      <Chip
-        label={tech.name}
-        icon={tech.icon}
-        color="primary"
-        variant="outlined"
-        sx={{
-          m: 1,
-          borderColor: 'white',
-          color: 'white',
-          fontSize: '1.1rem',  // Increase font size
-          padding: '5px 5px',  // Increase padding
-          transition: 'all 0.3s ease',
-          '&:hover': {
-            backgroundColor: 'transparent',
-            color: 'hotpink',
-            borderColor: 'hotpink',
-            transform: 'scale(1.1)',  // Increase size on hover
-            boxShadow: '0 0 20px rgba(255, 105, 180, 0.5)'  // Optional: add a shadow effect
-          },
-        }}
-      />
-    </Grid>
-  ))}
-</Grid>
+        <Grid container spacing={2}>
+          {techStack.map((tech, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card sx={{
+                backgroundColor: '#121212',
+                color: 'white',
+                borderRadius: '15px',
+                transition: 'transform 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  boxShadow: '0 0 20px rgba(255, 105, 180, 0.5)',
+                },
+              }}>
+                <CardMedia
+                  component="div"
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontSize: '4rem',
+                    padding: '20px',
+                  }}
+                >
+                  {tech.icon}
+                </CardMedia>
+                <CardContent>
+                  <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+                    {tech.name}
+                  </Typography>
+                  <Typography variant="body2" color="gray" sx={{ marginTop: '5px' }}>
+                    {tech.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   );
