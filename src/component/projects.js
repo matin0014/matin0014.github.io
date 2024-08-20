@@ -12,10 +12,12 @@ const cardData = [
   {
     image: paper,
     status: 'Paper Trading App',
+    description: 'Buy and Sell stocks with real-time market data with fake currency',
   },
   {
     image: llama,
     status: 'Fine Tuning Llama 3.1',
+    description: 'Using LoRA in the NVIDIA Nemo Framework, I fine-tuned Llama 3.1 and deployed it on an NVIDIA NIM',
   },
   {
     image: image,
@@ -112,6 +114,24 @@ const ActionAreaCard = () => {
                 />
               </CardActionArea>
             </Card>
+            {card.description && (
+              <Typography 
+                variant="body1" 
+                component="p" 
+                sx={{ 
+                  color: 'lightgray', 
+                  marginTop: '10px', 
+                  fontFamily: 'Poppins, sans-serif',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  fontSize: '0.6rem', // Half of the previous size
+                  textAlign: 'left', // Aligns the text to the left
+                }}
+              >
+                {card.description}
+              </Typography>
+            )}
           </div>
         ))}
       </div>
